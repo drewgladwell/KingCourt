@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Hanken+Grotesk:wght@400;700&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#ede1d1",
+                    "secondary-container": "#5e2e8c",
+                    "surface-variant": "#3b3429",
+                    "on-primary-fixed": "#271900",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#ffd9dc",
+                    "primary-fixed-dim": "#ffba29",
+                    "on-primary-container": "#6c4c00",
+                    "on-error-container": "#ffdad6",
+                    "surface-container": "#251f15",
+                    "surface-dim": "#18130a",
+                    "on-tertiary-fixed": "#3f0111",
+                    "surface": "#18130a",
+                    "on-error": "#690005",
+                    "on-tertiary": "#5b1725",
+                    "outline": "#9d8f79",
+                    "on-primary-fixed-variant": "#5e4100",
+                    "error": "#ffb4ab",
+                    "surface-container-highest": "#3b3429",
+                    "on-tertiary-fixed-variant": "#792d3a",
+                    "surface-tint": "#ffba29",
+                    "surface-container-lowest": "#120d06",
+                    "surface-bright": "#3f382e",
+                    "secondary": "#ddb8ff",
+                    "outline-variant": "#504533",
+                    "on-secondary-fixed-variant": "#5e2e8c",
+                    "on-secondary-container": "#d1a1ff",
+                    "on-secondary": "#461274",
+                    "on-primary": "#422d00",
+                    "on-background": "#ede1d1",
+                    "on-tertiary-container": "#863844",
+                    "on-secondary-fixed": "#2c0051",
+                    "tertiary": "#ffd7da",
+                    "primary": "#ffdca3",
+                    "on-surface": "#ede1d1",
+                    "primary-container": "#fdb927",
+                    "on-surface-variant": "#d5c4ad",
+                    "secondary-fixed": "#f0dbff",
+                    "tertiary-container": "#ffb0b8",
+                    "background": "#18130a",
+                    "inverse-primary": "#7d5800",
+                    "secondary-fixed-dim": "#ddb8ff",
+                    "surface-container-high": "#2f291f",
+                    "tertiary-fixed-dim": "#ffb2ba",
+                    "primary-fixed": "#ffdea9",
+                    "surface-container-low": "#201b12",
+                    "inverse-on-surface": "#362f25"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "section-gap": "120px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-stats": ["JetBrains Mono"],
+                    "label-caps": ["Bebas Neue"],
+                    "headline-lg": ["Bebas Neue"],
+                    "headline-lg-mobile": ["Bebas Neue"],
+                    "headline-md": ["Bebas Neue"],
+                    "display-hero": ["Bebas Neue"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "body-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "label-stats": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "label-caps": ["14px", {"lineHeight": "14px", "letterSpacing": "0.15em", "fontWeight": "400"}],
+                    "headline-lg": ["64px", {"lineHeight": "64px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["48px", {"lineHeight": "48px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "36px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "display-hero": ["120px", {"lineHeight": "110px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.hard-shadow-gold {
+    box-shadow: 8px 8px 0 0 #ffdca3
+    }
+.hard-shadow-purple {
+    box-shadow: 4px 4px 0 0 #5e2e8c
+    }
+.diagonal-mask {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%)
+    }
+.leather-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB2Tj5So6coLGSAbHmImmJq_zzvGNNRaUgPKw5OrB_lAyZ9f2YKO8SMNPJm0uGOxpmcFvVuBpjVt69Qxjq6-xe7wsW-UEvXpGrmw2r0TXx4Ty3OK-ejsfc1Lnipb58yVApbCaNhYvS-Zi-qbqAoB995iB2MVS3inTktEB7g42xcHDginvE4lH3dgVtq0N6QptNrAIKXnR1OQtykMMDzLdBKfGgmec-6vw2EC5PMYf48yFDj2vjBuDHD18C4tNzgrYF0AwyhU0vkS8Y);
+    opacity: 0.05
+    }</style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary min-h-screen font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="bg-surface fixed top-0 w-full z-50 border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-[1440px] mx-auto h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-widest uppercase">KING JAMES LEGACY</div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">CLE</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">MIA</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">LAL</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">TIMELINE</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="#">STATS</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="search">search</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<!-- Side Navigation (Left Anchor) -->
+<aside class="hidden lg:flex flex-col py-8 h-full w-64 fixed left-0 top-0 bg-surface-container border-r border-outline-variant z-40 pt-24">
+<div class="px-6 mb-10">
+<h2 class="font-headline-md text-headline-md text-primary">LEBRON JAMES</h2>
+<p class="font-label-caps text-label-caps text-on-surface-variant opacity-70">The All-Time Leader</p>
+</div>
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 py-3 px-4 text-on-surface-variant hover:bg-surface-variant rounded-xl mx-2 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-on-surface-variant hover:bg-surface-variant rounded-xl mx-2 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-label-caps text-label-caps">Eras</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 bg-secondary-container text-on-secondary-container rounded-xl mx-2 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="photo_library" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+<span class="font-label-caps text-label-caps">Moments</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-on-surface-variant hover:bg-surface-variant rounded-xl mx-2 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="equalizer">equalizer</span>
+<span class="font-label-caps text-label-caps">Stats</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-on-surface-variant hover:bg-surface-variant rounded-xl mx-2 transition-all active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="emoji_events">emoji_events</span>
+<span class="font-label-caps text-label-caps">Legacy</span>
+</a>
+</div>
+<div class="px-4 mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary font-label-caps text-label-caps hard-shadow-purple hover:translate-x-1 hover:translate-y-1 transition-transform">
+                JOIN THE KINGDOM
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:pl-64 pt-20">
+<!-- Hero Section -->
+<header class="relative w-full h-[614px] flex items-end px-margin-mobile md:px-margin-desktop py-section-gap overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+<img alt="LeBron James Action" class="w-full h-full object-cover grayscale opacity-40 scale-110" data-alt="A cinematic, high-contrast black and white photograph of LeBron James soaring through the air for a powerful dunk in a crowded arena. The scene is illuminated by dramatic stadium spotlights creating harsh highlights and deep shadows, emphasizing his muscular physique. The atmosphere is electric, filled with a hazy fog and the blurred faces of a cheering crowd, capturing a legendary moment of peak athletic performance in the Lakers Gold and Purple palette context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw5hsmVvbsqmrXrllTKFID9jtu9TGAnApgPwXegR6pQcH6UDx8nW6XXEu09Q_3TWhNI06TYdls3WL5w2kPT_j_GU08VVZ-5Nw5_cRo-Y4-89TVTo8p1hGF3yxf9X4DKfhfbmyDfqQq_SF_zlzcMYk-790OptbkeGgJBYX4vUCp3mAGBD1gJ43fkIjZ2r1bbpcEGJ_55msDX3Rnz2wFm6YhwIZ_6LOUPattnUzaD5wza9AiifuRY_5IwCcNLBNyLHuJl_n9HAWTWoQ"/>
+</div>
+<div class="relative z-20 max-w-4xl">
+<h1 class="font-display-hero text-display-hero text-primary uppercase leading-none mb-4">The Iconic<br/>Playbook</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Relive the greatest moments in basketball history. From chase-down blocks to championship-winning shots, explore the highlight reel of a king.</p>
+</div>
+</header>
+<!-- Filter Bar -->
+<section class="sticky top-20 z-30 bg-surface/90 backdrop-blur-md border-y border-outline-variant py-6 px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-center gap-gutter max-w-[1440px] mx-auto">
+<div class="flex flex-wrap gap-4 items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Filter by Category:</span>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-caps text-label-caps rounded-full">All Plays</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps rounded-full hover:bg-primary/20 transition-colors">Dunks</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps rounded-full hover:bg-primary/20 transition-colors">Clutch Shots</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps rounded-full hover:bg-primary/20 transition-colors">Blocks</button>
+<button class="px-6 py-2 bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps rounded-full hover:bg-primary/20 transition-colors">Celebrations</button>
+</div>
+<div class="flex gap-4 items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Era:</span>
+<select class="bg-surface-container-highest border-none text-on-surface-variant font-label-caps text-label-caps px-4 py-2 rounded-lg focus:ring-2 focus:ring-primary">
+<option>All Eras</option>
+<option>Cleveland (I)</option>
+<option>Miami Heat</option>
+<option>Cleveland (II)</option>
+<option>LA Lakers</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Play Gallery (Masonry Grid) -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+<!-- The Block 2016 -->
+<div class="group relative flex flex-col lg:col-span-2 row-span-2">
+<div class="relative overflow-hidden aspect-[16/10] bg-surface-container-high border border-outline-variant hard-shadow-gold">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A dramatic high-action sports photograph capturing 'The Block' from the 2016 NBA Finals. LeBron James is depicted at the apex of his jump, hand pinning the ball against the glass backboard in a moment of pure defensive dominance. The lighting is intense, highlighting the sweat and strain of the athletes. The background is a vibrant blur of the Oracle Arena crowd in deep blues and golds, maintaining the authoritative and legendary aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSO3hSd5xfDZES3s5Ng62RHkXl9Kxz6w8jlM1TWt7u10pjGw1vSY3UJ0ER2Oz8aV1WM7LNqEXISJipZ2Blyjld_ToTOaFKxXCN0cINA1EATkOQWLj0yeCQgEeSGHIT4N60mbsYO-e9y34jfwoa74SJjMFr-CjWaPkA7WDvAUnSHpLzGwhvo7FcuEzusBt645MaSLrNakg-5wHCWqy2Xq5nU5hQr6zl9Tr0w-ASk4hw-bca_ZMFv_ERw00q_P72mf__XxTZLAajWOU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-error-container text-on-error-container font-label-stats text-label-stats px-3 py-1 rounded-sm uppercase">Blocks</span>
+<span class="bg-surface-container text-primary font-label-stats text-label-stats px-3 py-1 border border-primary rounded-sm uppercase">2016 Finals</span>
+</div>
+<div class="absolute bottom-8 left-8 right-8">
+<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase mb-2">The Block</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg mb-6">The defensive play that changed the course of NBA history. Game 7, dying minutes, pure determination.</p>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 font-label-caps text-label-caps hard-shadow-purple active:translate-y-1 active:translate-x-1 transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span> Wallpaper
+                                </button>
+<button class="flex items-center gap-2 border border-primary text-primary px-6 py-3 font-label-caps text-label-caps hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span> Share
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Miami Dunk -->
+<div class="group relative flex flex-col">
+<div class="relative overflow-hidden aspect-square bg-surface-container-high border border-outline-variant hover:border-primary transition-colors">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-octane action shot of LeBron James during his Miami Heat era, performing a thunderous breakaway tom-ahawk dunk. He is suspended in mid-air with his jersey flowing, captured against a dark, high-contrast background that emphasizes the vibrant Heat Crimson and Lakers Gold lighting accents. The style is athletic and powerful, mimicking a premium championship program with hard edges and dramatic tonal layering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfP6fI4-LPibh1DVa9cQDs07xk5lPqIuHG5nk7b4PhldrNK6HbCMjTwRVVyEoApZXvpsk6xpdPfd2vcmpiICahQM2fzfVxXAMVQw--RFqbYM0NRd1d6oDsVkxitwif-SmUZbLWNZj1Q8XVzaYS_G2xLsVW_6oenailBAG-neM4rt82PJLXKabWn669K7prmcmjdw341HjDd89dAS3dl_H1obfFd6nMm4aibYJbND4iifJs7oKkBBju-QHfzBye45vebgR-cjZWTIo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="font-headline-md text-headline-md text-primary">Heat Wave</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant">The Lob to Wade Era</p>
+</div>
+<div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2">
+<button class="p-2 bg-surface/80 rounded-full text-primary"><span class="material-symbols-outlined" data-icon="download">download</span></button>
+<button class="p-2 bg-surface/80 rounded-full text-primary"><span class="material-symbols-outlined" data-icon="favorite">favorite</span></button>
+</div>
+</div>
+</div>
+<!-- Laker Celebration -->
+<div class="group relative flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container-high border border-outline-variant hover:border-primary transition-colors">
+<img class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-500" data-alt="A powerful, low-angle shot of LeBron James in a Lakers jersey, arms spread wide in a triumphant celebration after a game-winning shot. The lighting is warm and golden, reflecting off the polished hardwood floor. The composition is heroic and authoritative, with high contrast between the deep blacks of the shadows and the intense gold of the uniform, capturing a sense of undeniable dominance and resilience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTUZUFXAyxd0oKsaQCJYf3Ab_6-X8y-6HKSEKOLCjg3agSIs-Ur0G51vj0mTm1hWHqFBh2uQptSJaLyDOUJ0SsYs9of_r8KiGBNYUuNW3X72Kowpdzr2pyCCvQXT720RGyiZb_qrHIF-oM_OYK7ks1_J0TwYHVGNxqGWnWzcmKy7B_29QQxCnyGO3J-dTpq2l7a34zhOhk95jkqsSHDIPZ8o4ewdyMP8_t8SqPMvYuNTXFy8-0m8xlJIavM_mps8oRvBnP09zPKfo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="font-headline-md text-headline-md text-primary">Crown Me</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Championship Glory in LA</p>
+</div>
+</div>
+</div>
+<!-- The Silencer -->
+<div class="group relative flex flex-col lg:col-span-1">
+<div class="relative overflow-hidden aspect-square bg-surface-container-high border border-outline-variant hover:border-primary transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500" data-alt="LeBron James performing his signature 'Silencer' celebration on the court. The shot is captured at court-level with a shallow depth of field, making him the absolute focus against a blurred, dark stadium background. The color palette is heavy on deep blacks and Concrete Grey, with sharp Lakers Gold highlights catching the edges of his figure, conveying a high-tension, high-octane athletic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU_-6NY9Uik4B6Q9z7B2VC68huRvsQdDYrTwjLUbg2GfyzONmCN83OCy0ldaXGO4arsG0w7JSFjAoL1eS1k0AOaPWO2bRyx3LbrftbjTfS1D61JEJJLkmx_AM9_Z7Fdd1rxrDVthrNc6D1rtJq0IF6JHEEveehprXwym610c5y5Gta8-VtGsrYG27uqsVPmiNZedPRwRckEcBJeL3UVqu58n2UgRNEJV9E0xft03COP16Z9ASVqcvKEZQcDf3dpqDvTBHNNdGt0RY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h4 class="font-headline-md text-headline-md text-primary">The Silencer</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Signature Celebration</p>
+</div>
+</div>
+</div>
+<!-- 2012 Heat Shot -->
+<div class="group relative flex flex-col lg:col-span-2">
+<div class="relative overflow-hidden aspect-[21/9] bg-surface-container-high border border-outline-variant hover:border-primary transition-colors">
+<img class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500" data-alt="A wide panoramic shot of LeBron James taking a clutch three-pointer from the corner during a high-stakes playoff game. The arena is a sea of fans in matching white shirts, creating a high-contrast 'white-out' effect against the dark hardwood. The composition is dynamic and asymmetric, with LeBron on the far left of the frame, capturing the tension and movement of a legendary sports moment in a bold, tactile UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2hn6azHz01vdrZpA_wxX4K5hcL7GaMut_05heRpByhYjFh8lM8n3qn3ipt_W0ZHi3d8mskvJIqQf5SG_tODSX95PkZGWP7XGmzb6aBKj8miOWqPX_RVTk1Pm7oM2B_sI8MOmYd9_7_k6HF4BFYvRFNf8uOvB-D5lpXPydNFRqMgV4ets8Zg5khvVHGabhoO_Ir_1x6IJw5r4Q5-5Mb7ewYmivQI7Lm1ttLjz_KoyIFJk3YkfvEPhNAQA5TTALDj8slTTP2yyp9jc"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h4 class="font-headline-lg text-headline-lg text-primary">Game 6 Villain</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">The focused glare. The dominant performance in Boston. The turning point of a legacy.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Counter (Tactile Component) -->
+<section class="bg-surface-container-low border-y border-outline-variant py-section-gap px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1440px] mx-auto grid grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="flex flex-col items-center text-center p-8 border border-outline-variant hover:border-primary transition-colors group relative overflow-hidden">
+<div class="absolute inset-0 leather-texture group-hover:opacity-10"></div>
+<span class="font-display-hero text-headline-lg text-primary mb-2">40K+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Points Scored</span>
+</div>
+<div class="flex flex-col items-center text-center p-8 border border-outline-variant hover:border-primary transition-colors group relative overflow-hidden">
+<div class="absolute inset-0 leather-texture group-hover:opacity-10"></div>
+<span class="font-display-hero text-headline-lg text-primary mb-2">4</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Championships</span>
+</div>
+<div class="flex flex-col items-center text-center p-8 border border-outline-variant hover:border-primary transition-colors group relative overflow-hidden">
+<div class="absolute inset-0 leather-texture group-hover:opacity-10"></div>
+<span class="font-display-hero text-headline-lg text-primary mb-2">20</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">All-Star Selections</span>
+</div>
+<div class="flex flex-col items-center text-center p-8 border border-outline-variant hover:border-primary transition-colors group relative overflow-hidden">
+<div class="absolute inset-0 leather-texture group-hover:opacity-10"></div>
+<span class="font-display-hero text-headline-lg text-primary mb-2">1,000+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Blocks Recorded</span>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="w-full py-section-gap px-margin-desktop flex flex-col items-center justify-center gap-unit text-center max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md text-primary mb-4">KING JAMES LEGACY</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">NBA Official</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all" href="#">Contact</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60 uppercase tracking-widest">© 2024 LEBRON JAMES LEGACY. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</main>
+<!-- Floating Action Button (Contextual for Moments) -->
+<button class="fixed bottom-8 right-8 z-50 w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center hard-shadow-purple hover:scale-110 transition-transform md:hidden">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'wght' 700;">add</span>
+</button>
+</body></html>

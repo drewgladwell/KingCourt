@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Hard Shadow Utility from Style Guidance */
+        .shadow-8px-gold {
+            box-shadow: 8px 8px 0px 0px #ffdca3;
+        }
+        .court-texture {
+            background-image: radial-gradient(#3b3429 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .diagonal-mask {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#ede1d1",
+                      "secondary-container": "#5e2e8c",
+                      "surface-variant": "#3b3429",
+                      "on-primary-fixed": "#271900",
+                      "error-container": "#93000a",
+                      "tertiary-fixed": "#ffd9dc",
+                      "primary-fixed-dim": "#ffba29",
+                      "on-primary-container": "#6c4c00",
+                      "on-error-container": "#ffdad6",
+                      "surface-container": "#251f15",
+                      "surface-dim": "#18130a",
+                      "on-tertiary-fixed": "#3f0111",
+                      "surface": "#18130a",
+                      "on-error": "#690005",
+                      "on-tertiary": "#5b1725",
+                      "outline": "#9d8f79",
+                      "on-primary-fixed-variant": "#5e4100",
+                      "error": "#ffb4ab",
+                      "surface-container-highest": "#3b3429",
+                      "on-tertiary-fixed-variant": "#792d3a",
+                      "surface-tint": "#ffba29",
+                      "surface-container-lowest": "#120d06",
+                      "surface-bright": "#3f382e",
+                      "secondary": "#ddb8ff",
+                      "outline-variant": "#504533",
+                      "on-secondary-fixed-variant": "#5e2e8c",
+                      "on-secondary-container": "#d1a1ff",
+                      "on-secondary": "#461274",
+                      "on-primary": "#422d00",
+                      "on-background": "#ede1d1",
+                      "on-tertiary-container": "#863844",
+                      "on-secondary-fixed": "#2c0051",
+                      "tertiary": "#ffd7da",
+                      "primary": "#ffdca3",
+                      "on-surface": "#ede1d1",
+                      "primary-container": "#fdb927",
+                      "on-surface-variant": "#d5c4ad",
+                      "secondary-fixed": "#f0dbff",
+                      "tertiary-container": "#ffb0b8",
+                      "background": "#18130a",
+                      "inverse-primary": "#7d5800",
+                      "secondary-fixed-dim": "#ddb8ff",
+                      "surface-container-high": "#2f291f",
+                      "tertiary-fixed-dim": "#ffb2ba",
+                      "primary-fixed": "#ffdea9",
+                      "surface-container-low": "#201b12",
+                      "inverse-on-surface": "#362f25"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "section-gap": "120px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-stats": ["JetBrains Mono"],
+                      "label-caps": ["Bebas Neue"],
+                      "headline-lg": ["Bebas Neue"],
+                      "headline-lg-mobile": ["Bebas Neue"],
+                      "headline-md": ["Bebas Neue"],
+                      "display-hero": ["Bebas Neue"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "body-md": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "label-stats": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "label-caps": ["14px", {"lineHeight": "14px", "letterSpacing": "0.15em", "fontWeight": "400"}],
+                      "headline-lg": ["64px", {"lineHeight": "64px", "letterSpacing": "0.03em", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["48px", {"lineHeight": "48px", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "36px", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                      "display-hero": ["120px", {"lineHeight": "110px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 z-50 w-full bg-surface border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-margin-desktop max-w-[1440px] mx-auto h-20">
+<div class="font-headline-md text-headline-md text-primary tracking-widest">KING JAMES LEGACY</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps" href="#">CLE</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">MIA</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">LAL</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">TIMELINE</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">STATS</a>
+</div>
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-all active:scale-95 duration-150">search</span>
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 duration-150" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[921px] min-h-[700px] flex items-center overflow-hidden diagonal-mask">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-50" data-alt="A powerful, high-contrast cinematic portrait of LeBron James in a deep focused gaze, set against a dark, moody basketball arena background with golden light rays cutting through atmospheric dust. The lighting is dramatic and low-key, highlighting his athletic features and intense expression. The color palette is dominated by deep blacks, rich purples, and vibrant metallic gold accents, creating an authoritative and legendary sports atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArBs00MquE2rtCQ4qRuiPLeSJXdF5StKtqa1IUiOk5WgmSowmZ34PF0uEY5rgEymNY7EwIcgKuT_yOlY0sIiT6CAdpPSdhTeRLrg_NnrHlMHY9vqf2xSrdc8ugKOjCbTtSc6tRXLFj35JvqpokoZBbLF5rtW4aW66wsWzNdYkSFErpOtTvbMlbf9Xt4AbYOvesPpj82xXbgK3rop9-PKaQ8PVh3JTCJQFm-gbYc7tv4QK_1naJ_I1t_NP6fycPZpq9rEaS5NZAOZs"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-[1440px] mx-auto w-full">
+<div class="max-w-3xl">
+<h1 class="font-display-hero text-display-hero text-primary uppercase mb-4">LONG LIVE THE KING</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-unit-large max-w-xl">
+                        Two decades of unrivaled dominance. From a prodigy in Akron to the all-time scoring leader, the legacy of LeBron James transcends the court.
+                    </p>
+<div class="mt-8 flex gap-gutter">
+<button class="bg-primary-container text-on-primary-fixed font-label-caps text-label-caps px-8 py-4 shadow-8px-gold hover:border-r-4 hover:border-b-4 hover:border-secondary-container transition-all active:scale-95">
+                            EXPLORE THE TIMELINE
+                        </button>
+</div>
+</div>
+</div>
+<!-- Side Floating Stats (Mini Milestone) -->
+<div class="absolute bottom-10 right-margin-desktop hidden lg:block bg-surface-container p-6 border-l-4 border-primary">
+<p class="font-label-caps text-label-caps text-primary mb-2">SCORING KING</p>
+<div class="font-headline-lg text-headline-lg text-on-surface">40,474</div>
+<p class="font-label-stats text-label-stats text-on-surface-variant">CAREER POINTS &amp; COUNTING</p>
+</div>
+</section>
+<!-- Career Eras Grid -->
+<section class="py-section-gap px-margin-desktop max-w-[1440px] mx-auto">
+<div class="flex items-end justify-between mb-16">
+<div>
+<span class="font-label-stats text-label-stats text-primary uppercase">Chapter Selection</span>
+<h2 class="font-headline-lg text-headline-lg">THE JOURNEY</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- CLE -->
+<div class="group relative aspect-[3/4] overflow-hidden bg-surface-container border border-outline-variant hover:shadow-8px-gold transition-all duration-300">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="Close up action shot of a wine and gold basketball jersey texture with high-contrast stadium lighting. The atmosphere is gritty and high-energy, representing the resilience of Cleveland sports. The lighting focuses on the intricate stitching of the jersey against a dark, blurred background of a packed arena. Deep burgundy and metallic gold colors dominate the frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-s-LL52UV9XmzXa0UXHSrtmqCkPn7PhbJ8WxoVXBqf4SiXJIM-UPYKJgaXnOQF-gHD1FvhWwEieXXQaDQRuRnZOPTq5YtNXSsnvTWTDrgTyjISusyrVioHAjswoOgKUPtyCZg-mEV1HV8ujpKWrgDzg0rlMAXTzFuDqNjC0keVA_nWzdZ45kzYQ1r2Us_2WbgbMbPZOhToUUGl2v9gWFSJVLnBcUJodlKkgT0suH5sUAu48_ODX8dQvPzafOsWcqxS76Rj_H8YCA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-primary">CLEVELAND</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">THE PRODIGY &amp; THE PROMISE</p>
+</div>
+</div>
+<!-- MIA -->
+<div class="group relative aspect-[3/4] overflow-hidden bg-surface-container border border-outline-variant hover:shadow-8px-gold transition-all duration-300">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="A neon-lit basketball court at night in Miami, featuring high-contrast red and black shadows. The floor is polished hardwood reflecting vibrant crimson and white lights. The mood is slick, modern, and elite, capturing the championship era of the Miami Heat. The aesthetic is bold and sharp with deep blacks and intense red highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChF17nkUEDom7sVyMrkCy3KOaVHLRghgrU44NjFRrWAWnL-pJ3b0HVBNGeUGC-p6bGq9RXhPxockeDG7QYPJwVbSvsf4RrkpLr3kMjKlfAUIvHSAR3_Fqp6AdqrEOfmeKDogZL3b35rLRhqbiJtIChj6Il0QeyEjKwezidFzpmJC7kTBg4oRIkOu05H7cKPH83oYaP7usHf9Jrhg9mL8qoj_wJD7ey9vJrpK18-RJ58c16Mq6TouuumbuDuNfz-wU2vIZdeG0e-io"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-tertiary">MIAMI</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">THE CHAMPIONSHIP BLUEPRINT</p>
+</div>
+</div>
+<!-- LAL -->
+<div class="group relative aspect-[3/4] overflow-hidden bg-surface-container border border-outline-variant hover:shadow-8px-gold transition-all duration-300">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500" data-alt="The bright lights of a Los Angeles arena, showcasing the iconic Lakers purple and gold color scheme. Soft focus on a basketball hoop with a golden rim against a deep purple shadowed background. The lighting is cinematic and prestigious, conveying a Hollywood-style athletic legacy. The frame is filled with rich violet and vibrant yellow tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWt-7XoTDDHZorT16KXj16GlAt78cFbZgEYS7pHnzwSkgwt5Xy--PqabiRv4mvlrfP_Z9Y7L2KFVbuySUzKP0tSiVmMf7lzcuBAe7HAdd4ZXlhG9xNQfTuEXD9tGHUxp-3LXWW8LIQV37Pc70OuizfLFP0bHQVZFPG9CSDgnqHUveO2h3wZsCKtEWHoMMBq6lfR20dg196ZedwJRH-I6XL-DuY35HcZnOUy1Hs4kTsNo3JFlAKc5LpmZX5NHsZBCdYXambyRjq2HA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-md text-headline-md text-secondary">LOS ANGELES</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">THE HOLLYWOOD FINALE</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Milestone Tracker (Asymmetric Bento) -->
+<section class="py-section-gap bg-surface-container-low court-texture">
+<div class="px-margin-desktop max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-8 bg-surface p-12 border border-outline-variant relative">
+<div class="absolute top-0 right-0 p-8 text-primary/10">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<span class="font-label-stats text-label-stats text-primary mb-4 block">LIVE TRACKER</span>
+<h2 class="font-headline-lg text-headline-lg mb-8">SCORING ASCENSION</h2>
+<div class="relative h-24 bg-surface-variant w-full mb-12 flex items-center px-4">
+<div class="absolute left-0 h-full bg-primary-container" style="width: 92%;"></div>
+<div class="relative z-10 w-full flex justify-between items-center font-label-stats text-label-stats text-on-primary-fixed">
+<span>40,474 PTS</span>
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">REBOUNDS</p>
+<p class="font-headline-md text-headline-md">11,185</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">ASSISTS</p>
+<p class="font-headline-md text-headline-md">11,009</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">CHAMPIONSHIPS</p>
+<p class="font-headline-md text-headline-md text-primary">04</p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">MVP AWARDS</p>
+<p class="font-headline-md text-headline-md text-primary">04</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="bg-secondary-container p-8 flex-1 border border-outline-variant shadow-8px-gold">
+<h3 class="font-headline-md text-headline-md text-on-secondary-container mb-4">THE NEXT TARGET</h3>
+<p class="font-body-md text-body-md text-on-secondary-container mb-8">Pushing the boundaries of longevity. Tracking the road to 45,000 career points.</p>
+<button class="bg-surface text-primary font-label-caps text-label-caps w-full py-4 hover:bg-surface-variant transition-all">VIEW FULL STATS</button>
+</div>
+<div class="bg-surface p-8 border border-outline-variant">
+<p class="font-label-stats text-label-stats text-primary mb-2">RECENT PERFORMANCE</p>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md">vs GS W</span>
+<span class="font-headline-md text-headline-md text-on-surface">36/12/10</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News -->
+<section class="py-section-gap px-margin-desktop max-w-[1440px] mx-auto">
+<div class="mb-16">
+<span class="font-label-stats text-label-stats text-primary">OFF-COURT &amp; HEADLINES</span>
+<h2 class="font-headline-lg text-headline-lg">LATEST UPDATES</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- News Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-square overflow-hidden mb-6 border border-outline-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A bright and inspiring modern classroom interior at the I PROMISE School, featuring vibrant educational graphics and comfortable seating. The lighting is soft and natural, pouring in from large windows. The style is clean and optimistic, with a palette of warm woods and bright primary accents. It conveys a sense of growth, community support, and hope for the future." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7aPKbp4OMVHmpI4c_yIbV5hNE9YgsYcnwF84Bl2_nedvqF8ubtcsykRh_zlNVA_tSQz06u14fGwDLQRdGHLtzZ1-uRNB4pwnMxNRSrgjftClJxESQDl0ZKn-G6IhR6on-hEf96RYUS7boQ0gcoV2lF94vKgQQJSoxz2GJ6E80H_opo-H7hz_VsqTyY0jqZ8FBcL-WliL7OOlJ13O2WLSsdOxTQ33Pgfoz6p-6-Kv8J7S4O-uEJUtb79G6xTcZQWOsE-QPzedkZnM"/>
+<div class="absolute top-4 left-4 bg-tertiary-container px-3 py-1 font-label-stats text-label-stats text-on-tertiary-container">COMMUNITY</div>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">I PROMISE EXPANSION</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">New housing initiatives announced for families in Akron.</p>
+</div>
+<!-- News Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-square overflow-hidden mb-6 border border-outline-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An intense low-angle shot of a basketball swishing through a net under high-powered stadium lights. The focus is sharp on the net's movement and the texture of the basketball, with a dark, bokeh background of a cheering crowd. The lighting is high-tension and electric, capturing a crucial game highlight moment with high-octane energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNm27zx4j404u-8kJ7UDdbOQPWtTyN1AVDL-vWbulALo0w02brrkTVY6p8x37wveE7-qXofiE472g36ZL-F7Ck8lyUiWDojwkJFmrXCUQNmuJGOpIq0wecUjqYam_LpxQCXavpbL0H9fTj5cD3VX4m-7lFADOemVffiS6ENSkLKBuMwRYn6M_JGDCNIdnkche5TEcukbZK4rAJuywoqhXKkZRremZ0dACDNdJxNk01VwBxyWBQT-vMWfP26xYMXPeUZ9gvEdh7EU0"/>
+<div class="absolute top-4 left-4 bg-primary-container px-3 py-1 font-label-stats text-label-stats text-on-primary-fixed">HIGHLIGHTS</div>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">TRIPLE-DOUBLE WATCH</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">LeBron dominates in overtime thriller against the Warriors.</p>
+</div>
+<!-- News Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-square overflow-hidden mb-6 border border-outline-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A professional studio setup with high-end microphones and cameras on a dark, minimalist set. Warm spotlighting hits a leather chair, creating an intimate yet authoritative media atmosphere. The aesthetic is sophisticated and high-end, representing a prestigious media appearance or podcast recording session. The color palette is dark with warm amber light accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfLutwJdrRs16WE_qwkSMWMR-SUybZxyRrBhKSfPve_Htdcykt1HKu_jX_Sr8ajrM3ZQ8QmmJTMrLXcgKh1IFmVYqH_UNzTR9y1_SybSjAV80kguHJMxh6ZJlIi4EeWaF_N4R9hwdsxtS_zox6HR7BldS9G2ciplgtLiaW33GxIHQHNtpHFh_CqrgN_bWrccU0PoK3ZptCk9I-7OgA-m7QfohdFJd9vj8mTPOQ_-R_FZ11JUGdDpIY6fRxXotoef-S225u8DGxdAI"/>
+<div class="absolute top-4 left-4 bg-secondary-container px-3 py-1 font-label-stats text-label-stats text-on-secondary-container">MEDIA</div>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">THE SHOP RETURNS</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Unfiltered conversations with the biggest names in sports and culture.</p>
+</div>
+<!-- News Card 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-square overflow-hidden mb-6 border border-outline-variant relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-fashion athletic apparel showcase, featuring sleek black and gold sneakers in a minimalist gallery setting. High-contrast lighting emphasizes the textures of leather and synthetic mesh. The mood is luxury athletic, with a sharp, professional aesthetic. The lighting is dramatic and precise, highlighting the premium quality and design of the footwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmqryLuNkxs-eu16SNTp8zuiHk_IpWVHY4TZ7N5pnyvom1I01eYK4p3_e56-6albZ-tPuc3_W_9-0atqtdj1bQ81FPeKT6RwptFNB_yKDRu175RCtGF5VFXACLH7yO4SLfjrXKkIyCd1bJaDpnjfMD8dSYNR-n6ltJVTLRdvVCRbpfQ7bOdaZMl-3xwHzBvO2ha8zhmuXpMi12DESSajTR2lf1oLFq5_FMoLBzsXQhezErYlp_F8LCNwhzr5w4WR8wIfG06kF995U"/>
+<div class="absolute top-4 left-4 bg-surface-container-highest px-3 py-1 font-label-stats text-label-stats text-on-surface-variant">EQUIPMENT</div>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">LEBRON XXI 'GOLD'</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">The latest signature silhouette drops this weekend.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop bg-surface-container-lowest border-t border-outline-variant flex flex-col items-center justify-center gap-unit text-center">
+<div class="font-headline-md text-headline-md text-primary mb-8">KING JAMES LEGACY</div>
+<div class="flex flex-wrap justify-center gap-gutter mb-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">NBA Official</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant opacity-60">
+            © 2024 LEBRON JAMES LEGACY. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+</body></html>
